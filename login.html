@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Environment Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="login-title">Login</h1>
+    <form id="login-form" autocomplete="on">
+      <div class="form-group">
+        <label for="login-username">Username</label>
+        <input type="text" id="login-username" required autocomplete="username"/>
+      </div>
+      <div class="form-group">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required autocomplete="current-password"/>
+      </div>
+      <button type="submit" class="update-button">Login</button>
+      <div id="login-error" class="error-message"></div>
+    </form>
+    <div style="margin-top:12px; font-size:0.97rem;">
+      <span>Don't have an account? <a href="register.html">Register here</a></span>
+    </div>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>

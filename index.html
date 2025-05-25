@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Environment Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <button class="update-button" onclick="logout()" style="float:right; margin-top:10px;">Logout</button>
+    <h1 class="main-heading">🏡 Environment Dashboard</h1>
+    <div class="dashboard">
+      <div class="screen" id="temperature-screen">
+        <span class="icon">🌡️</span>
+        <h2>Temperature</h2>
+        <p id="temperature">-- °C</p>
+      </div>
+      <div class="screen" id="air-quality-screen">
+        <span class="icon">🫧</span>
+        <h2>Air Quality</h2>
+        <p id="air-quality">-- AQI</p>
+      </div>
+      <div class="screen" id="light-screen">
+        <span class="icon">💡</span>
+        <h2>Light Presence</h2>
+        <p id="light">--</p>
+      </div>
+      <div class="screen" id="water1-screen">
+        <span class="icon">🚰</span>
+        <h2>Water Tank - 1st Floor</h2>
+        <p id="water1">--</p>
+      </div>
+      <div class="screen" id="water2-screen">
+        <span class="icon">💧</span>
+        <h2>Water Tank - 2nd Floor</h2>
+        <p id="water2">--</p>
+      </div>
+    </div>
+    <div class="input-section">
+      <div class="input-box">
+        <label for="input-temp">Temperature</label>
+        <input type="number" id="input-temp" placeholder="Enter Temperature (°C)" min="25" max="35" />
+        <span class="error-message" id="temp-error">Temperature must be between 25°C and 35°C.</span>
+      </div>
+      <div class="input-box">
+        <label for="input-air">Air Quality</label>
+        <input type="number" id="input-air" placeholder="Enter Air Quality (AQI)" min="50" max="200" />
+        <span class="error-message" id="air-error">Air Quality must be between 50 and 200 AQI.</span>
+      </div>
+      <div class="input-box">
+        <label for="input-light">Light</label>
+        <select id="input-light">
+          <option value="">Select Light Level</option>
+          <option value="Lights Off">Lights Off</option>
+          <option value="Dim Lights">Dim Lights</option>
+          <option value="Lights On">Lights On</option>
+        </select>
+        <span class="error-message" id="light-error">Please select a valid light option.</span>
+      </div>
+      <div class="input-box">
+        <label for="input-water1">Water Tank - 1st Floor</label>
+        <select id="input-water1">
+          <option value="">Select Level</option>
+          <option value="Full">Full</option>
+          <option value="Nearly Full">Nearly Full</option>
+          <option value="Half">Half</option>
+          <option value="Nearly Half">Nearly Half</option>
+          <option value="Empty">Empty</option>
+        </select>
+        <span class="error-message" id="water1-error">Please select a valid water level.</span>
+      </div>
+      <div class="input-box">
+        <label for="input-water2">Water Tank - 2nd Floor</label>
+        <select id="input-water2">
+          <option value="">Select Level</option>
+          <option value="Full">Full</option>
+          <option value="Nearly Full">Nearly Full</option>
+          <option value="Half">Half</option>
+          <option value="Nearly Half">Nearly Half</option>
+          <option value="Empty">Empty</option>
+        </select>
+        <span class="error-message" id="water2-error">Please select a valid water level.</span>
+      </div>
+    </div>
+    <div class="update-button-container">
+      <button class="update-button" id="update-btn" onclick="updateFromInput()" disabled>
+        Set Point
+      </button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

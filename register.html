@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Environment Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="login-title">Register</h1>
+    <form id="register-form" autocomplete="on">
+      <div class="form-group">
+        <label for="register-username">Username</label>
+        <input type="text" id="register-username" required autocomplete="username"/>
+      </div>
+      <div class="form-group">
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" required autocomplete="new-password"/>
+      </div>
+      <div class="form-group">
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" required autocomplete="email"/>
+      </div>
+      <button type="submit" class="update-button">Register</button>
+      <div id="register-error" class="error-message"></div>
+      <div id="register-success" style="display:none; color:green; margin-top:10px;"></div>
+    </form>
+    <div style="margin-top:12px; font-size:0.97rem;">
+      <span>Already have an account? <a href="login.html">Login here</a></span>
+    </div>
+  </div>
+  <script src="register.js"></script>
+</body>
+</html>
