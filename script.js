@@ -100,13 +100,13 @@ async function getLatestReading(sensorId) {
   return '--';
 }
 
-// Map dashboard names to screen IDs
+// Map dashboard names to exact DB names
 const dashboardNames = {
-  'Temperature Sensor': { id: 'temperature', input: () => tempInput.value.trim() },
-  'Air Quality Sensor': { id: 'air-quality', input: () => airInput.value.trim() },
-  'Light Sensor': { id: 'light', input: () => lightInput.value },
-  'Water Tank 1st Floor': { id: 'water1', input: () => water1Input.value },
-  'Water Tank 2nd Floor': { id: 'water2', input: () => water2Input.value }
+  'Temperature': { id: 'temperature', input: () => tempInput.value.trim() },
+  'Air Quality': { id: 'air-quality', input: () => airInput.value.trim() },
+  'Light Presence': { id: 'light', input: () => lightInput.value },
+  'Water Tank - 1st Floor': { id: 'water1', input: () => water1Input.value },
+  'Water Tank - 2nd Floor': { id: 'water2', input: () => water2Input.value }
 };
 
 async function updateRealTimeData() {
@@ -140,7 +140,7 @@ async function updateFromInput() {
     if (value !== '' && sensorsByName[sensorName]) {
       setpoints.push({
         sensor_id: sensorsByName[sensorName],
-        name: sensorName.replace(' Sensor', ''), // For display, remove "Sensor" if present
+        name: sensorName, // Use the real DB sensor name
         value: value
       });
     }
